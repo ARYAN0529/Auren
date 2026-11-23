@@ -4,12 +4,19 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
-  title: "AUREN",
-  description: "Everyday clothing, made to last",
+  title: "AUREN | Modern Essentials",
+  description: "Discover timeless fashion. Designed for everyday living.",
 };
 
 export default function RootLayout({
@@ -17,14 +24,13 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      {/* flex-col + min-h-screen lets the footer stick to the bottom */}
       <body
         className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col antialiased`}
       >
         <Navbar />
-        <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
-          {children}
-        </main>
+
+        <main className="flex-1">{children}</main>
+
         <Footer />
       </body>
     </html>
