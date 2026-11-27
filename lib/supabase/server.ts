@@ -1,4 +1,6 @@
 import { createServerClient } from "@supabase/ssr";
+        // to run on nextjs server
+
 import { cookies } from "next/headers";
 
 export async function createClient() {
